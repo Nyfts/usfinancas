@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import {
   FaClipboardList,
   FaPlus,
-  FaTag,
-  FaGithub,
-  FaTags,
+  FaHome,
+  FaGithub
 } from "react-icons/fa";
 import {
   ProSidebar,
@@ -41,7 +40,7 @@ const Sidebar = ({ sidebarCollapsed }) => {
       </SidebarHeader>
       <SidebarContent>
         <Menu iconShape="square">
-          <MenuItem style={{ color: "#fff" }} icon={<FaClipboardList />}>
+          <MenuItem style={{ color: "#fff" }} icon={<FaHome />}>
             <Link style={{ color: "#fff" }} to="/dashboard">
               Inicio
             </Link>
