@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { transitions, positions, Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import MainContainer from "./components/MainContainer";
+
+// optional configuration
+const options = {
+  // you can also just use 'bottom center'
+  position: positions.BOTTOM_RIGHT,
+  timeout: 10000,
+  
+  // you can also just use 'scale'
+  transition: transitions.FADE
 }
+
+const App = () => {
+  return (
+    <AlertProvider template={AlertTemplate} time {...options}>
+      <div style={{ height: "100vh", display: "flex" }}>
+        <MainContainer />
+      </div>
+    </AlertProvider>
+  );
+};
 
 export default App;
