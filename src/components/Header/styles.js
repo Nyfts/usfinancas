@@ -3,14 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: absolute;
   width: 100%;
-  background-color: #fff;
+  background-color: #7E8D85;
   padding: 15px 12px;
   font-size: 14px;
   box-shadow: 0px 0px 9px 0px rgb(0 0 0 / 30%);
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
-  color: #000;
+  color: #F0F7F4;
   z-index: 1;
 `;
 
@@ -24,7 +24,7 @@ export const LeftButton = styled.div`
   margin-right: 12px;
   transition: all .25s;
   &:hover {
-    background-color: #5B5B5B;
+    background-color: #3C493F;
     cursor: pointer;
   }
 `;

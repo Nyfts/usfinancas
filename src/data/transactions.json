@@ -1,0 +1,26 @@
+[
+  {
+    "description": "Compras",
+    "date": "2022-11-28",
+    "type": "DESPESA",
+    "value": 1000
+  },
+  {
+    "description": "Gasolina",
+    "date": "2022-11-12",
+    "type": "DESPESA",
+    "value": 199.99
+  },
+  {
+    "description": "God Ragnarok",
+    "date": "2022-11-09",
+    "type": "DESPESA",
+    "value": 400
+  },
+  {
+    "description": "Salario",
+    "date": "2022-11-05",
+    "type": "RECEITA",
+    "value": 2000
+  }
+]

@@ -1,10 +1,10 @@
 export const getRouteName = (route) => {
   switch (route) {
     case '/dashboard':
-      return 'Dashboard'
+      return 'Inicio'
     case '/dashboard/error':
       return 'Error'
-    case '/nova-movimentacao':
-      return 'Nova movimentação'
+    case '/transacoes':
+      return 'Transações'
   }
 }

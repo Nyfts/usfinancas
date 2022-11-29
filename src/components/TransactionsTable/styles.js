@@ -15,6 +15,7 @@ export const Table = styled.table`
 export const Tr = styled.tr``;
 
 export const Td = styled.td`
+  color: ${props => props.textColor || "#000"};
   height: 15px;
 `;
 
@@ -22,7 +23,7 @@ export const THead = styled.thead`
   display: block;
 
   & > tr {
-    background-color: #3D3D3D;
+    background-color: #3C493F;
     color: #fff;
     display: table;
     width: 100%;
@@ -34,7 +35,7 @@ export const THead = styled.thead`
     width: 20%;
 
     &:hover {
-      background-color: #000;
+      background-color: #7E8F85;
       cursor: pointer;
     }
   }
@@ -82,7 +83,7 @@ export const SearchInput = styled.input`
 `;
 
 export const SearchSubmit = styled.div`
-  background-color: #3D3D3D;
+  background-color: #3C493F;
   padding: 0 30px;
 
   border-top-right-radius: 5px;
@@ -94,7 +95,7 @@ export const SearchSubmit = styled.div`
 
   &:hover {
     cursor: pointer;
-    background-color: #000;
+    background-color: #7E8F85;
   }
 
   &:focus {
@@ -108,7 +109,7 @@ export const TableFooter = styled.div`
   justify-content: space-between;
   font-size: 12px;
   margin-top: 10px;
-  color: #7a7a7a;
+  color: #3C493F;
 `;
 
 export const TableFooterMessages = styled.div`

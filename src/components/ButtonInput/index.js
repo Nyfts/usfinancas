@@ -2,10 +2,10 @@ import React from "react";
 
 import { Container, Button } from "./styles";
 
-function ButtonInput({ onClick, title }) {
+function ButtonInput({ onClick, title, primary }) {
   return (
     <Container>
-      <Button onClick={onClick}>{title || 'Confirmar'}</Button>
+      <Button primary={primary || "#3C493F"} onClick={onClick}>{title || 'Confirmar'}</Button>
     </Container>
   );
 }

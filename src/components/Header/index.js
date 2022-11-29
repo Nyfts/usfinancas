@@ -9,7 +9,7 @@ function Header({ updateSidebarCollapsed }) {
   return (
     <Container>
       <LeftButton onClick={updateSidebarCollapsed}>
-        <FaBars color="#000" size={18} />
+        <FaBars color="#F0F7F4" size={18} />
       </LeftButton>
       <RouteName>{getRouteName(useLocation().pathname)}</RouteName>
     </Container>

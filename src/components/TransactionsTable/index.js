@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FaSearch } from "react-icons/fa";
 
+import transactions from "../../data/transactions.json";
+
 import {
   Container,
   Table,
@@ -16,7 +18,7 @@ import {
   TableFooterMessages,
 } from './styles';
 
-function TransactionsTable({ transactions }) {
+function TransactionsTable() {
   const [filter, setFilter] = useState("");
 
   return (
@@ -36,10 +38,10 @@ function TransactionsTable({ transactions }) {
         <Table cellSpacing={0}>
           <THead>
             <Tr>
-              <Td>Descrição</Td>
-              <Td>Data</Td>
-              <Td>Tipo</Td>
-              <Td>Valor</Td>
+              <Td textColor="#fff">Descrição</Td>
+              <Td textColor="#fff">Data</Td>
+              <Td textColor="#fff">Tipo</Td>
+              <Td textColor="#fff">Valor</Td>
             </Tr>
           </THead>
           <TBody>
@@ -59,9 +61,9 @@ function TransactionsTable({ transactions }) {
                 .split(" ")[0];
               return (
                 <Tr key={transaction.id}>
-                  <Td>{transaction.desc}</Td>
+                  <Td>{transaction.description}</Td>
                   <Td>{date}</Td>
-                  <Td>{transaction.type}</Td>
+                  <Td textColor={transaction.type === "DESPESA" ? "#a50000" : "#467e5"}>{transaction.type}</Td>
                   <Td>
                     R${" "}
                     {parseFloat(transaction.value)

@@ -5,7 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #3D3D3D;
+  background-color: ${props => props.primary}; //#3C493F;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -13,12 +13,12 @@ export const Button = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: #000;
+    opacity: .8;
   }
 
   &:active {
     border: none;
-    background-color: #3D3D3D;
+    background-color: #3C493F;
   }
 
   &:active {

@@ -13,6 +13,6 @@ export const Input = styled.input`
 
 export const Title = styled.div`
   font-size: 16px;
-  color: #3D3D3D;
+  color: #3C493F;
   margin-bottom: 5px;
 `;

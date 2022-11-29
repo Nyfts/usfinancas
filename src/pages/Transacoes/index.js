@@ -89,8 +89,8 @@ function Transacoes() {
             </Inline>
             <div style={{ marginTop: 20 }}></div>
             <Inline>
-              <ButtonInput onClick={sendRequest} title="Receita" />
-              <ButtonInput onClick={sendRequest} title="Despesa" />
+              <ButtonInput onClick={sendRequest} title="Receita" primary={"#467e53"} />
+              <ButtonInput onClick={sendRequest} title="Despesa" primary={"#a50000"} />
             </Inline>
 
           </BoxContainer>

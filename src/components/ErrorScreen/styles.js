@@ -43,6 +43,6 @@ export const GoBackButton = styled.div`
 
   &:hover {
     cursor: pointer;
-    background-color: #3D3D3D;
+    background-color: #3C493F;
   }
 `;
