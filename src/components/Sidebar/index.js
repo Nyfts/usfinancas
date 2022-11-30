@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  FaClipboardList,
   FaPlus,
   FaHome,
-  FaGithub
+  FaGithub,
+  FaUser,
+  FaCreditCard
 } from "react-icons/fa";
 import {
   ProSidebar,
@@ -50,6 +51,16 @@ const Sidebar = ({ sidebarCollapsed }) => {
               Transações
             </Link>
           </MenuItem>
+          <MenuItem style={{ color: "#fff" }} icon={<FaCreditCard />}>
+            <Link style={{ color: "#fff" }} to="/contas">
+              Contas
+            </Link>
+          </MenuItem>
+          <MenuItem style={{ color: "#fff" }} icon={<FaUser />}>
+            <Link style={{ color: "#fff" }} to="/usuarios">
+              Usuários
+            </Link>
+          </MenuItem>
         </Menu>
       </SidebarContent>
       <SidebarFooter>
@@ -60,10 +71,10 @@ const Sidebar = ({ sidebarCollapsed }) => {
           }}
         >
           <a
-            href="https://github.com/Nyfts/TeixeiraFinancas"
+            href="https://github.com/Nyfts/usfinancas"
             target="_blank"
             className="sidebar-btn"
-            rel="noopener noreferrer"
+            rel="Github Repository"
           >
             <FaGithub />
             <span style={{ marginLeft: 5 }} />
