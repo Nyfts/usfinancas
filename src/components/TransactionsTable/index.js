@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { FaSearch } from "react-icons/fa";
 
-import transactions from "../../data/transactions.json";
-
 import {
   Container,
   Table,
@@ -18,7 +16,7 @@ import {
   TableFooterMessages,
 } from './styles';
 
-function TransactionsTable() {
+function TransactionsTable({ transactions }) {
   const [filter, setFilter] = useState("");
 
   return (

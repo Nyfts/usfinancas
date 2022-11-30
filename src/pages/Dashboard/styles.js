@@ -20,22 +20,42 @@ export const Title = styled.div`
 `;
 
 export const BoxContainer = styled.div`
-  min-height: 200px;
+  min-height: 280px;
   margin: 20px 20px 0px;
   padding: 20px;
   box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
   background-color: #FFF;
   border-radius: 7px;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 `;
 
-export const Column = styled.div`
+export const DataContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  color: #3C493F;
 `;
 
-export const Row = styled.div`
-    width: 100%;
-    display: inline-flex;
-    /* background-color: #f1f1f1; */
+export const DataTitle = styled.div`
+  text-align: right;
+  font-size: 24px;
+`;
+
+export const DataDescription = styled.div`
+  display: flex;
+  min-width: 200px;
+`;
+
+export const DataValueTitle = styled.div`
+  width: 50%;
+  font-size: 18px;
+`;
+
+export const DataValue = styled.div`
+  width: 50%;
+  text-align: right;
+  color: ${props => props.color || "#3C493F"};
+  font-size: 18px;
 `;

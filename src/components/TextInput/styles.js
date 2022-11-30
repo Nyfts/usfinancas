@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 10px;
+  flex: 1;
+  margin: 10px 20px;
 `;
 
 export const Input = styled.input`
-  width: 500px;
   border: 1px solid #c4c4c4;
   padding: 5px;
+  width: 100%;
   border-radius: 5px;
 `;
 

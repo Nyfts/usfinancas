@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useAlert } from "react-alert";
 
 import TextInput from "../../components/TextInput";
 import DatePickerInput from "../../components/DatePickerInput";
@@ -14,17 +13,17 @@ import {
   Inline,
 } from "./styles";
 import TransactionsTable from "../../components/TransactionsTable";
+import { useData } from "../../contexts/data";
 
 function Transacoes() {
-  const [loading, setLoading] = useState(true);
-  const [movimento, setMovimento] = useState({
-    tipo_movId: 2,
-    data: new Date(),
-    valor: 0,
-    desc: "",
-    subcategoriaId: 0,
+  const [loading, setLoading] = useState(false);
+  const [transaction, setTransaction] = useState({
+    description: "",
+    date: new Date(),
+    type: "DESPESA",
+    value: 0
   });
-  const [movimentos, setMovimentos] = useState([]);
+  const [transactionsState, setTransactionsState] = useState([])
   const [error, setError] = useState({
     show: false,
     status: 0,
@@ -32,29 +31,17 @@ function Transacoes() {
     message: "",
   });
 
-  const alert = useAlert();
-
-  const tiposMov = [
-    {
-      id: 2,
-      nome: "Saída",
-    },
-    {
-      id: 3,
-      nome: "Investimento",
-    },
-    {
-      id: 1,
-      nome: "Entrada",
-    },
-  ];
+  const { transactions, setStorageTransactions } = useData();
 
   useEffect(() => {
-    setLoading(false);
+    console.log("loaded");
+
+    setTransactionsState(transactions);
   }, []);
 
   const sendRequest = async () => {
-    setLoading(true);
+    setTransactionsState([...transactionsState, transaction]);
+    setStorageTransactions([...transactionsState, transaction]);
   };
 
   return (
@@ -70,21 +57,21 @@ function Transacoes() {
               <TextInput
                 name="desc"
                 title="Descrição:"
-                onChange={(e) => setMovimento({ ...movimento, desc: e.target.value })}
+                onChange={(e) => setTransaction({ ...transaction, description: e.target.value })}
               />
               <TextInput
                 name="valor"
                 title="Valor:"
                 onChange={(e) =>
-                  setMovimento({
-                    ...movimento,
-                    valor: parseFloat(e.target.value.replace(/\,/g, ".")),
+                  setTransaction({
+                    ...transaction,
+                    value: parseFloat(e.target.value.replace(/\,/g, ".")),
                   })
                 }
               />
               <DatePickerInput
-                selected={movimento.data}
-                onChange={(date) => setMovimento({ ...movimento, data: date })}
+                selected={transaction.date}
+                onChange={(date) => setTransaction({ ...transaction, date: date })}
               />
             </Inline>
             <div style={{ marginTop: 20 }}></div>
@@ -96,7 +83,7 @@ function Transacoes() {
           </BoxContainer>
           <BoxContainer>
             <Title>Ultimas transações</Title>
-            <TransactionsTable transactions={movimentos}/>
+            <TransactionsTable transactions={transactionsState}/>
           </BoxContainer>
         </>
       )}
