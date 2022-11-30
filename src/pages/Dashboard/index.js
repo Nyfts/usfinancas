@@ -172,12 +172,13 @@ function Dashboard() {
                         label: 'Receita',
                         data: getAnualPorMesETipo("RECEITA"),
                         borderColor: '#467e53',
+                        backgroundColor: '#467e53',
                       },
                       {
                         label: 'Despesa',
                         data: getAnualPorMesETipo("DESPESA"),
                         borderColor: '#a50000',
-
+                        backgroundColor: '#a50000',
                       },
                     ],
                   }}
