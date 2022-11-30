@@ -7,7 +7,7 @@ import MainContainer from "./components/MainContainer";
 // optional configuration
 const options = {
   // you can also just use 'bottom center'
-  position: positions.BOTTOM_RIGHT,
+  position: positions.TOP_RIGHT,
   timeout: 10000,
   
   // you can also just use 'scale'

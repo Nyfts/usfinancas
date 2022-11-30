@@ -14,13 +14,13 @@ import {
 } from "./styles";
 import TransactionsTable from "../../components/TransactionsTable";
 import { useData } from "../../contexts/data";
+import { useAlert } from "react-alert";
 
 function Transacoes() {
   const [loading, setLoading] = useState(false);
   const [transaction, setTransaction] = useState({
     description: "",
     date: new Date(),
-    type: "DESPESA",
     value: 0
   });
   const [transactionsState, setTransactionsState] = useState([])
@@ -33,15 +33,48 @@ function Transacoes() {
 
   const { transactions, setStorageTransactions } = useData();
 
+  const alert = useAlert();
+
   useEffect(() => {
     console.log("loaded");
 
     setTransactionsState(transactions);
   }, []);
 
-  const sendRequest = async () => {
-    setTransactionsState([...transactionsState, transaction]);
-    setStorageTransactions([...transactionsState, transaction]);
+
+  function validateForm() {
+    if (!transaction.description) {
+      return "Descrição é obrigatório";
+    }
+
+    if (!transaction.value || typeof transaction.value !== 'number') {
+      return "Valor inválido";
+    }
+
+    if (!transaction.date) {
+      return "Data inválida";
+    }
+  }
+
+  function sendRequest(type) {
+    const errors = validateForm();
+
+    if (errors) {
+      return alert.error(errors)
+    }
+
+    setTransactionsState([...transactionsState, {
+      description: transaction.description,
+      date: transaction.date,
+      value: transaction.value,
+      type: type
+    }]);
+    setStorageTransactions([...transactionsState, {
+      description: transaction.description,
+      date: transaction.date,
+      value: transaction.value,
+      type: type
+    }]);
   };
 
   return (
@@ -62,6 +95,7 @@ function Transacoes() {
               <TextInput
                 name="valor"
                 title="Valor:"
+                type="number"
                 onChange={(e) =>
                   setTransaction({
                     ...transaction,
@@ -76,8 +110,8 @@ function Transacoes() {
             </Inline>
             <div style={{ marginTop: 20 }}></div>
             <Inline>
-              <ButtonInput onClick={sendRequest} title="Receita" primary={"#467e53"} />
-              <ButtonInput onClick={sendRequest} title="Despesa" primary={"#a50000"} />
+              <ButtonInput onClick={() => sendRequest("RECEITA")} title="Receita" primary={"#467e53"} />
+              <ButtonInput onClick={() => sendRequest("DESPESA")} title="Despesa" primary={"#a50000"} />
             </Inline>
 
           </BoxContainer>

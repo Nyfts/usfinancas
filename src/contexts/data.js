@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 
+import InitialData from "../data/InitialData.json";
+
 const DataContext = createContext({
   transactions: [],
   setStorageTransactions: () => {}
@@ -18,8 +20,12 @@ export default function DataProvider({ children }) {
 
       const storageTransactions = storageItens?.transactions;
 
+      console.log(InitialData)
+
       if (storageTransactions) {
         setTransactions(JSON.parse(storageTransactions));
+      } else {
+        setStorageTransactions(InitialData)
       }
     }
     getStorageItens();

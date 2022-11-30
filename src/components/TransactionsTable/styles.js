@@ -65,6 +65,9 @@ export const TBody = styled.tbody`
 
 export const TableContainer = styled.div`
   width: 100%;
+  max-height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 export const SearchBox = styled.div`

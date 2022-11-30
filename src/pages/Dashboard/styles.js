@@ -21,7 +21,7 @@ export const Title = styled.div`
 
 export const BoxContainer = styled.div`
   min-height: 280px;
-  margin: 20px 20px 0px;
+  margin: 15px;
   padding: 20px;
   box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
   background-color: #FFF;
@@ -45,7 +45,7 @@ export const DataTitle = styled.div`
 
 export const DataDescription = styled.div`
   display: flex;
-  min-width: 200px;
+  min-width: 250px;
 `;
 
 export const DataValueTitle = styled.div`
@@ -58,4 +58,8 @@ export const DataValue = styled.div`
   text-align: right;
   color: ${props => props.color || "#3C493F"};
   font-size: 18px;
+`;
+
+export const Inline = styled.div`
+  display: flex;
 `;

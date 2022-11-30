@@ -21,7 +21,7 @@ function TransactionsTable({ transactions }) {
 
   return (
     <Container>
-      <SearchBox>
+      {/* <SearchBox>
         <SearchInput
           name="search"
           type="text"
@@ -31,7 +31,7 @@ function TransactionsTable({ transactions }) {
         <SearchSubmit onClick={() => { }}>
           <FaSearch color="#fff" size={14} />
         </SearchSubmit>
-      </SearchBox>
+      </SearchBox> */}
       <TableContainer>
         <Table cellSpacing={0}>
           <THead>
